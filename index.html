@@ -1,1 +1,24 @@
-<!DOCTYPE html><html><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><title>Lasagna Toss!</title></head><body style="font-family:system-ui;text-align:center;padding:2rem"><h1>Lasagna Toss</h1><p>Uploading full game next…</p></body></html>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Lasagna Toss!</title>
+</head><body>
+<p id="s" style="font-family:system-ui;text-align:center;margin-top:40vh">Loading Lasagna Toss…</p>
+<script src="g1.js"></script>
+<script src="g2.js"></script>
+<script>
+(async()=>{
+  try {
+    const B64=(window.__L1||"")+(window.__L2||"");
+    const bin=Uint8Array.from(atob(B64),c=>c.charCodeAt(0));
+    const stream=new Blob([bin]).stream().pipeThrough(new DecompressionStream("gzip"));
+    const text=await new Response(stream).text();
+    document.open(); document.write(text); document.close();
+  } catch(e) {
+    document.getElementById("s").textContent="Oops: "+e+". Update Safari/Chrome and retry.";
+  }
+})();
+</script>
+</body></html>
